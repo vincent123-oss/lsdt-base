@@ -1,0 +1,43 @@
+# ==============================
+# LSDT 项目 Git 忽略名单
+# ==============================
+
+# 1. Python 缓存文件 (无用垃圾)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 2. 模型权重文件 (千万别传，动辄几百MB会导致 Push 失败)
+*.pt
+*.pth
+*.ckpt
+# 注：如果你想把那 3 个满级账号分享给大家，可以取消下面三行的注释，强制追踪它们
+#AntMaze/walker2d_lsdt_best.pt
+#AntMaze/hopper_lsdt_best.pt
+#AntMaze/halfcheetah_lsdt_best.pt
+
+# 3. 训练日志与过程产物 (太杂乱，让别人自己跑)
+AntMaze/*.csv
+AntMaze/ablation_*/
+*.log
+
+# 4. 大型数据集 (严格禁止上传，让新人自己用脚本下载)
+data/
+*.hdf5
+*.pkl
+
+# 5. 安装包与环境 (绝对不要传)
+mujoco210.tar.gz
+mujoco_py37/
+venv/
+.env/
+
+# 6. 多媒体视频 (太占空间)
+*.mp4
+*.avi
+
+# 7. IDE 与系统隐藏文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
